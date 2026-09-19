@@ -4,35 +4,40 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MOGWAIFEST® Official Website: Home </title>
-
+  
+  <!-- FAVICON -->
   <link rel="icon" type="image/png" href="favicon.png">
   
   <style>
     /* 1. CONFIGURACIÓN DE FUENTES */
     @font-face {
-      font-family: 'PrettyOnTheInside';
+      font-family: 'PotiFont';
       src: url('poti.ttf') format('truetype');
     }
 
     @font-face {
-    font-family: 'FraksCustom';
-    src: url('FRAKTURI.ttf') format('truetype');
+      font-family: 'FraksCustom';
+      src: url('FRAKS___.ttf') format('truetype');
+    }
+
+    :root {
+      --pure-black: #000000;
+      --dark-purple: #1a052e;
+      --deep-purple: #0d0217;
+      --accent-purple: #5c1699;
+      --light-purple: #9d4edd;
+      --white: #ffffff;
+      --gray: #888888;
     }
 
     body {
       margin: 0;
       padding: 0;
       font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-      background-color: #050508;
-      color: #ffffff;
+      background-color: var(--pure-black);
+      color: var(--white);
       overflow-x: hidden;
-    }
-
-    :root {
-      --magenta: #ff007f;
-      --cyan: #00f3ff;
-      --dark-bg: #0a0a0f;
-      --card-bg: #111116;
+      scroll-behavior: smooth;
     }
 
     /* 2. NAVBAR */
@@ -41,30 +46,31 @@
       justify-content: space-between;
       align-items: center;
       padding: 1.5rem 4rem;
-      background: rgba(5, 5, 8, 0.95);
+      background: rgba(0, 0, 0, 0.95);
       position: fixed;
       top: 0;
       width: 100%;
       box-sizing: border-box;
       z-index: 100;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      border-bottom: 1px solid rgba(92, 22, 153, 0.3);
+      backdrop-filter: blur(5px);
     }
 
     .logo-container {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 12px;
     }
 
     .logo-icon {
-      color: var(--magenta);
+      color: var(--light-purple);
       font-size: 1.5rem;
     }
 
     .logo-text {
-      font-family: 'PrettyOnTheInside', 'Impact', sans-serif;
-      font-size: 2rem;
-      color: var(--cyan);
+      font-family: 'PotiFont', 'Impact', sans-serif;
+      font-size: 2.2rem;
+      color: var(--white);
       letter-spacing: 2px;
       margin: 0;
       text-transform: uppercase;
@@ -76,7 +82,7 @@
     }
 
     .nav-links a {
-      color: #fff;
+      color: #cccccc;
       text-decoration: none;
       font-size: 0.85rem;
       font-weight: bold;
@@ -85,26 +91,26 @@
     }
 
     .nav-links a:hover {
-      color: var(--magenta);
+      color: var(--light-purple);
     }
 
     /* 3. HERO SECTION */
     .hero {
-      margin-top: 100px;
-      min-height: 80vh;
+      margin-top: 80px;
+      min-height: 85vh;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       text-align: center;
-      background: radial-gradient(circle at center, #1a0014 0%, #050508 70%);
+      background: radial-gradient(circle at center, var(--dark-purple) 0%, var(--pure-black) 70%);
       padding: 2rem;
     }
 
     .date-badge {
-      background: rgba(0, 243, 255, 0.1);
-      border: 1px solid var(--cyan);
-      color: var(--cyan);
+      background: rgba(92, 22, 153, 0.2);
+      border: 1px solid var(--accent-purple);
+      color: #e0d0f5;
       padding: 0.5rem 1.5rem;
       border-radius: 20px;
       font-size: 0.9rem;
@@ -114,20 +120,21 @@
     }
 
     .main-title {
-      font-size: 8rem; /* Aumentamos el tamaño general */
-      line-height: 0.85;
+      font-family: 'PotiFont', 'Impact', sans-serif; 
+      font-size: 6.5rem;
+      line-height: 1;
       margin: 0;
-      font-weight: 900;
-      letter-spacing: -3px;
-      text-transform: uppercase; /* Fuerza a que se vea en mayúsculas y llene mejor el espacio */
-      }
+      font-weight: normal;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
 
     .main-title .white-text {
-      color: #ffffff;
+      color: var(--white);
     }
 
     .main-title .gradient-text {
-      background: linear-gradient(90deg, #ff007f, #ff4d4d);
+      background: linear-gradient(90deg, var(--light-purple), var(--accent-purple));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
@@ -135,17 +142,19 @@
     .hero-subtitle {
       margin-top: 1.5rem;
       font-size: 1.2rem;
-      color: #aaa;
+      color: var(--gray);
       max-width: 600px;
       line-height: 1.6;
+      font-family: "Helvetica Neue", Helvetica, sans-serif;
     }
 
     .coop-badge {
       margin-top: 1.5rem;
       font-size: 1.5rem;
-      color: var(--magenta);
+      color: var(--white);
       font-weight: bold;
-      border: 2px solid var(--magenta);
+      border: 2px solid var(--accent-purple);
+      background: rgba(92, 22, 153, 0.15);
       padding: 0.5rem 2rem;
       border-radius: 5px;
     }
@@ -159,8 +168,8 @@
     }
 
     .time-box {
-      background: var(--card-bg);
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: var(--deep-purple);
+      border: 1px solid rgba(92, 22, 153, 0.4);
       padding: 1.5rem;
       border-radius: 10px;
       min-width: 80px;
@@ -170,16 +179,12 @@
     .time-box .number {
       font-size: 2.5rem;
       font-weight: bold;
+      color: var(--white);
     }
-
-    .time-box:nth-child(1) .number { color: #ff3366; }
-    .time-box:nth-child(2) .number { color: var(--cyan); }
-    .time-box:nth-child(3) .number { color: #b366ff; }
-    .time-box:nth-child(4) .number { color: #00ff99; }
 
     .time-box .label {
       font-size: 0.8rem;
-      color: #666;
+      color: var(--gray);
       text-transform: uppercase;
       letter-spacing: 2px;
       margin-top: 0.5rem;
@@ -197,15 +202,16 @@
       font-size: 3rem;
       margin-bottom: 1rem;
       font-weight: 900;
+      text-transform: uppercase;
     }
     
     .section-title span {
-      color: var(--cyan);
+      color: var(--light-purple);
     }
 
     .section-subtitle {
       text-align: center;
-      color: #888;
+      color: var(--gray);
       margin-bottom: 3rem;
     }
 
@@ -216,20 +222,22 @@
     }
 
     .band-card {
-      background: var(--card-bg);
+      background: var(--deep-purple);
+      border: 1px solid rgba(92, 22, 153, 0.2);
       border-radius: 15px;
       overflow: hidden;
-      transition: transform 0.3s;
+      transition: transform 0.3s, border-color 0.3s;
     }
 
     .band-card:hover {
       transform: translateY(-10px);
+      border-color: var(--accent-purple);
     }
 
     .band-img {
       width: 100%;
       height: 250px;
-      background-color: #222;
+      background-color: var(--dark-purple);
       background-size: cover;
       background-position: center;
       position: relative;
@@ -239,13 +247,13 @@
       position: absolute;
       top: 10px;
       left: 10px;
-      background: rgba(0,0,0,0.8);
-      color: var(--cyan);
+      background: rgba(0, 0, 0, 0.85);
+      color: #e0d0f5;
       padding: 0.3rem 0.8rem;
       border-radius: 20px;
       font-size: 0.8rem;
       font-weight: bold;
-      border: 1px solid var(--cyan);
+      border: 1px solid var(--accent-purple);
     }
 
     .band-info {
@@ -255,11 +263,12 @@
     .band-info h3 {
       margin: 0 0 0.5rem 0;
       font-size: 1.8rem;
+      color: var(--white);
     }
 
     .band-info p {
       margin: 0;
-      color: var(--magenta);
+      color: var(--light-purple);
       font-size: 0.9rem;
       text-transform: uppercase;
       letter-spacing: 1px;
@@ -275,10 +284,11 @@
 
     .gallery-item {
       height: 200px;
-      background-color: #222;
+      background-color: var(--dark-purple);
       border-radius: 10px;
       background-size: cover;
       background-position: center;
+      border: 1px solid rgba(92, 22, 153, 0.2);
       transition: opacity 0.3s;
     }
 
@@ -292,7 +302,7 @@
       height: 0;
       overflow: hidden;
       border-radius: 15px;
-      border: 2px solid #222;
+      border: 2px solid var(--accent-purple);
     }
 
     .video-container iframe {
@@ -305,9 +315,9 @@
 
     /* 7. FOOTER TIPO FESTIVAL */
     .festival-footer {
-      background: #000;
+      background: #020005;
       padding: 4rem 4rem 8rem 4rem; 
-      border-top: 1px solid #222;
+      border-top: 1px solid rgba(92, 22, 153, 0.3);
     }
 
     .footer-columns {
@@ -319,9 +329,11 @@
     }
 
     .footer-col h4 {
-      font-size: 1.5rem;
+      font-size: 1.2rem;
       margin-bottom: 1.5rem;
       text-transform: uppercase;
+      color: var(--white);
+      letter-spacing: 1px;
     }
 
     .footer-col ul {
@@ -335,114 +347,220 @@
     }
 
     .footer-col ul li a {
-      color: #aaa;
+      color: var(--gray);
       text-decoration: none;
-      font-size: 1rem;
+      font-size: 0.95rem;
       transition: color 0.2s;
     }
 
     .footer-col ul li a:hover {
-      color: #fff;
+      color: var(--white);
     }
 
-    .newsletter-btn {
-      background: var(--cyan);
-      color: #000;
-      border: none;
-      padding: 1rem 2rem;
-      font-weight: bold;
-      font-size: 1rem;
-      border-radius: 5px;
-      cursor: pointer;
-      text-transform: uppercase;
+    /* Logos de Patrocinadores */
+    .sponsors-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .sponsors-container img {
+      height: 60px;
+      object-fit: contain;
+      filter: drop-shadow(0 4px 6px rgba(0,0,0,0.5));
     }
 
     .visitor-count {
       text-align: center;
-      margin-top: 3rem;
-      color: #555;
-      font-size: 0.9rem;
+      margin-top: 4rem;
+      color: #444444;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
 
-    /* 8. REPRODUCTOR DE MÚSICA */
+    /* 8. NUEVO REPRODUCTOR DE MÚSICA */
+    @keyframes spin-slow {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    .animate-spin-slow {
+      animation: spin-slow 8s linear infinite;
+    }
+    .paused {
+      animation-play-state: paused;
+    }
+
     .music-player {
       position: fixed;
       bottom: 0;
       left: 0;
       width: 100%;
-      background: #0a0a0f;
-      border-top: 1px solid rgba(255, 0, 127, 0.3);
+      background: rgba(0, 0, 0, 0.95);
+      border-top: 1px solid rgba(92, 22, 153, 0.5);
       padding: 1rem 2rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
       box-sizing: border-box;
       z-index: 1000;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 -10px 30px rgba(48,0,90,0.3);
     }
 
-    .player-info {
+    .player-left {
       display: flex;
       align-items: center;
-      gap: 15px;
+      gap: 1rem;
+      width: 30%;
+      min-width: 200px;
     }
 
-    .player-art {
+    .player-art-container {
+      position: relative;
       width: 50px;
       height: 50px;
-      background: var(--magenta);
-      border-radius: 5px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: bold;
+      border-radius: 50%;
+      border: 2px solid var(--light-purple);
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(90,0,163,0.8);
+      flex-shrink: 0;
+    }
+
+    .player-art-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .player-art-center {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 10px;
+      height: 10px;
+      background: var(--pure-black);
+      border-radius: 50%;
+      border: 1px solid #444;
     }
 
     .player-text h5 {
       margin: 0;
       font-size: 1rem;
+      color: var(--white);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-family: 'PotiFont', sans-serif;
+      letter-spacing: 1px;
     }
 
     .player-text p {
       margin: 0;
-      font-size: 0.8rem;
-      color: #888;
+      font-size: 0.85rem;
+      color: var(--light-purple);
+      font-weight: bold;
+    }
+
+    .player-center {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 40%;
+      max-width: 500px;
     }
 
     .player-controls {
       display: flex;
       align-items: center;
-      gap: 15px;
-      flex-grow: 1;
-      max-width: 500px;
-      margin-left: 2rem;
+      gap: 1.5rem;
+      margin-bottom: 5px;
     }
 
-    .play-btn {
-      background: var(--magenta);
-      color: white;
+    .control-btn {
+      background: none;
       border: none;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
+      color: var(--gray);
       cursor: pointer;
-      font-size: 1.2rem;
+      transition: color 0.2s;
       display: flex;
       align-items: center;
       justify-content: center;
+      padding: 0;
+    }
+
+    .control-btn:hover { color: var(--white); }
+
+    .play-btn-circle {
+      background: var(--white);
+      color: var(--pure-black);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.2s;
+      cursor: pointer;
+      border: none;
+    }
+
+    .play-btn-circle:hover { transform: scale(1.05); }
+
+    .progress-wrapper {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.75rem;
+      color: var(--gray);
+      font-family: monospace;
     }
 
     .progress-bar-container {
       flex-grow: 1;
       height: 6px;
-      background: #333;
+      background: #222;
       border-radius: 3px;
       overflow: hidden;
+      cursor: pointer;
     }
 
     .progress-bar-fill {
-      width: 30%;
+      width: 0%;
       height: 100%;
-      background: linear-gradient(90deg, var(--magenta), var(--cyan));
+      background: var(--light-purple);
+    }
+
+    .player-right {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 12px;
+      width: 30%;
+      color: var(--gray);
+    }
+
+    .volume-bar {
+      width: 80px;
+      height: 6px;
+      background: #222;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+
+    .volume-fill {
+      width: 66%;
+      height: 100%;
+      background: var(--gray);
+      border-radius: 3px;
+      transition: background 0.3s;
+    }
+
+    .volume-bar:hover .volume-fill {
+      background: var(--light-purple);
     }
 
     @media (max-width: 768px) {
@@ -451,8 +569,13 @@
       .main-title { font-size: 3.5rem; }
       .countdown-container { flex-wrap: wrap; }
       nav { padding: 1rem; flex-direction: column; gap: 1rem; }
-      .music-player { flex-direction: column; gap: 1rem; }
-      .player-controls { margin-left: 0; width: 100%; }
+      
+      .music-player { flex-direction: column; gap: 1.5rem; padding-bottom: 1.5rem; }
+      .player-left { width: 100%; justify-content: center; }
+      .player-center { width: 100%; }
+      .player-right { display: none; }
+      .festival-footer { padding: 3rem 2rem 12rem 2rem; }
+      .sponsors-container { justify-content: center; }
     }
   </style>
 </head>
@@ -461,14 +584,13 @@
   <!-- NAVEGACIÓN -->
   <nav>
     <div class="logo-container">
-      <span class="logo-icon">⚡</span>
       <h1 class="logo-text">MOGWAIFEST</h1>
     </div>
     <div class="nav-links">
-      <a href="#lineup">LINEUP</a>
       <a href="#archivo">ARCHIVO</a>
-      <a href="#">INFO</a>
-      <a href="#">CONTACTO</a>
+      <a href="#contacto">CONTACTO</a>
+      <a href="#lineup">PRÓXIMOS EVENTOS</a>
+      <a href="#info">INFO</a>
     </div>
   </nav>
 
@@ -476,10 +598,10 @@
   <header class="hero">
     <div class="date-badge">9 OCTUBRE 2026 • CHIKILLA BAR, ENSENADA</div>
     <h1 class="main-title">
-        <div class="white-text" style="font-family: 'FraksCustom', sans-serif;">MOGWAI</div>
-        <div class="gradient-text" style="font-family: 'FraksCustom', sans-serif;">PRODUCTIONS</div>
+      <div class="white-text" style="font-family: 'FraksCustom', sans-serif;">MOGWAI</div>
+      <div class="gradient-text" style="font-family: 'FraksCustom', sans-serif;">PRODUCTIONS</div>
     </h1>
-    <p class="hero-subtitle">Haciendo desvergues desde 2022</p>
+    <p class="hero-subtitle">Seele Album Release Show "Laberinto de los Grandes Lagos"</p>
     <div class="coop-badge">Cooperación Voluntaria: $50</div>
 
     <!-- CONTADOR -->
@@ -506,12 +628,10 @@
   <!-- LINEUP SECTION -->
   <section class="section-container" id="lineup">
     <h2 class="section-title">LINEUP <span></span></h2>
-    <p class="section-subtitle">Selecciona el día para conocer las bandas y escenarios destacados.</p>
     
     <div class="lineup-grid">
       <div class="band-card">
         <div class="band-img" style="background-image: url('https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');">
-          <div class="time-tag">🕒 19:00 - 20:30</div>
         </div>
         <div class="band-info">
           <p>BANDA INVITADA</p>
@@ -521,20 +641,18 @@
 
       <div class="band-card">
         <div class="band-img" style="background-image: url('https://images.unsplash.com/photo-1598387993441-a364f854c3e1?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');">
-          <div class="time-tag">🕒 20:30 - 22:00</div>
         </div>
         <div class="band-info">
           <p>INVITADO ESPECIAL</p>
-          <h3>Stacks!</h3>
+          <h3>Stacks!s</h3>
         </div>
       </div>
 
       <div class="band-card">
         <div class="band-img" style="background-image: url('https://images.unsplash.com/photo-1470229722913-7c090b0626cb?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');">
-          <div class="time-tag">🕒 22:00 - 00:00</div>
         </div>
         <div class="band-info">
-          <p>ALBUM RELEASE</p>
+          <p>DESDE TIJUANA</p>
           <h3>Seele</h3>
         </div>
       </div>
@@ -544,7 +662,7 @@
   <!-- ARCHIVO Y EXPERIENCIA MOGWAI -->
   <section class="section-container" id="archivo">
     <h2 class="section-title">ARCHIVO <span>MOGWAI</span></h2>
-    <p class="section-subtitle">Recuerdos visuales</p>
+    <p class="section-subtitle">Recuerdos graficos</p>
 
     <div class="gallery-grid">
       <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1459749411175-04bf5292ceea?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60');"></div>
@@ -554,59 +672,91 @@
     </div>
 
     <div class="video-container">
-      <iframe src="https://www.youtube.com/embed/xdJb8UR0IMY" title="MogwaiFest 2025 Aftermovie" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/xdJb8UR0IMY" title="MogwaiFest Aftermovie" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
   </section>
 
   <!-- FOOTER TIPO FESTIVAL -->
-  <footer class="festival-footer">
+  <footer class="festival-footer" id="contacto">
     <div class="footer-columns">
       <div class="footer-col">
         <h4>FESTIVAL</h4>
         <ul>
           <li><a href="#">Home</a></li>
-          <li><a href="#">Tickets</a></li>
-          <li><a href="#">Afiliados</a></li>
+          <li><a href="#">Afiliados / Prensa</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h4>SOCIAL</h4>
         <ul>
           <li><a href="#">Instagram</a></li>
-          <li><a href="#">TikTok</a></li>
-          <li><a href="#">Facebook</a></li>
         </ul>
       </div>
+      <!-- SECCIÓN REEMPLAZADA DE PATROCINADORES -->
       <div class="footer-col">
-        <h4>BE THE FIRST TO KNOW</h4>
-        <button class="newsletter-btn">SIGN UP FOR UPDATES</button>
+        <h4>PATROCINADORES</h4>
+        <div class="sponsors-container">
+            <img src="lamugre.png" alt="La Mugre Sponsor" onerror="this.onerror=null; this.src='https://placehold.co/150x80/2a0845/ffffff?text=La+Mugre'">
+            <img src="bajamike.png" alt="Baja Mike Sponsor" onerror="this.onerror=null; this.src='https://placehold.co/150x80/2a0845/ffffff?text=Baja+Mike'">
+        </div>
       </div>
     </div>
     
     <div class="visitor-count">
-      Eres el visitante número: <strong id="visitor-counter" style="color: var(--cyan);">000142</strong>
+      ERES EL VISITANTE NÚMERO: <strong id="visitor-counter" style="color: var(--light-purple); font-size: 1.1rem;">000000</strong>
     </div>
   </footer>
 
-  <!-- REPRODUCTOR DE MÚSICA -->
+  <!-- NUEVO REPRODUCTOR DE MÚSICA ADAPTADO -->
   <div class="music-player">
-    <div class="player-info">
-      <div class="player-art">S</div>
-      <div class="player-text">
-        <h5>Seele - Laberinto de los Grandes Lagos</h5>
-        <p>Album Release Preview</p>
+      <!-- Album Art & Track Info -->
+      <div class="player-left">
+          <div class="player-art-container">
+              <img id="player-art" src="seele_albumcover.jpg" alt="Seele Album Cover" class="player-art-img animate-spin-slow paused" onerror="this.onerror=null; this.src='https://placehold.co/100x100/30005a/ffffff?text=Seele'">
+              <div class="player-art-center"></div>
+          </div>
+          <div class="player-text">
+              <h5>Laberinto de los Grandes Lagos</h5>
+              <p>Seele</p>
+          </div>
       </div>
-    </div>
-    <div class="player-controls">
-      <button class="play-btn" id="playAudioBtn">▶</button>
-      <div class="progress-bar-container">
-        <div class="progress-bar-fill" id="audioProgress"></div>
+
+      <!-- Controls -->
+      <div class="player-center">
+          <div class="player-controls">
+              <button class="control-btn">
+                  <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/></svg>
+              </button>
+              <button id="play-btn" class="play-btn-circle">
+                  <svg id="play-icon" width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                  <svg id="pause-icon" width="20" height="20" fill="currentColor" viewBox="0 0 24 24" style="display: none;"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+              </button>
+              <button class="control-btn">
+                  <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"/></svg>
+              </button>
+          </div>
+          <!-- Progress Bar -->
+          <div class="progress-wrapper">
+              <span id="current-time">0:00</span>
+              <div class="progress-bar-container">
+                  <div class="progress-bar-fill" id="audioProgress"></div>
+              </div>
+              <span>3:45</span>
+          </div>
       </div>
-    </div>
-    <audio id="siteAudio" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"></audio>
+
+      <!-- Extra tools (Volume) -->
+      <div class="player-right">
+          <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
+          <div class="volume-bar">
+              <div class="volume-fill"></div>
+          </div>
+      </div>
   </div>
 
   <script>
+    
+    // 1. Lógica del Contador Regresivo
     const destDate = new Date("October 9, 2026 19:00:00").getTime();
 
     function updateTimer() {
@@ -618,36 +768,65 @@
         document.getElementById("cd-hours").innerText = String(Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))).padStart(2, '0');
         document.getElementById("cd-mins").innerText = String(Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, '0');
         document.getElementById("cd-secs").innerText = String(Math.floor((diff % (1000 * 60)) / 1000)).padStart(2, '0');
+      } else {
+        document.getElementById("cd-days").innerText = "00";
+        document.getElementById("cd-hours").innerText = "00";
+        document.getElementById("cd-mins").innerText = "00";
+        document.getElementById("cd-secs").innerText = "00";
       }
     }
     setInterval(updateTimer, 1000);
     updateTimer();
 
+    // 2. Lógica del Contador de Visitas (Simulado con LocalStorage)
     let currentVisits = localStorage.getItem("mogwai_visits");
-    if (!currentVisits) currentVisits = 142;
+    if (!currentVisits) currentVisits = 142; // Número inicial base
     else currentVisits = parseInt(currentVisits) + 1;
+    
     localStorage.setItem("mogwai_visits", currentVisits);
     document.getElementById("visitor-counter").innerText = String(currentVisits).padStart(6, '0');
 
-    const audioEl = document.getElementById("siteAudio");
-    const playBtn = document.getElementById("playAudioBtn");
-    const progress = document.getElementById("audioProgress");
+    // 3. Lógica del Reproductor de Música (Actualizada)
+    const playBtn = document.getElementById('play-btn');
+    const playIcon = document.getElementById('play-icon');
+    const pauseIcon = document.getElementById('pause-icon');
+    const albumArt = document.getElementById('player-art');
+    const progressBar = document.getElementById('audioProgress');
+    const timeDisplay = document.getElementById('current-time');
+    
+    let isPlaying = false;
+    let progressInterval;
+    let currentSeconds = 0;
+    const totalSeconds = 225; // 3:45
 
-    playBtn.addEventListener("click", () => {
-      if (audioEl.paused) {
-        audioEl.play();
-        playBtn.innerText = "❚❚";
-      } else {
-        audioEl.pause();
-        playBtn.innerText = "▶";
-      }
-    });
+    function formatTime(seconds) {
+        const mins = Math.floor(seconds / 60);
+        const secs = Math.floor(seconds % 60);
+        return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
+    }
 
-    audioEl.addEventListener("timeupdate", () => {
-      if (audioEl.duration) {
-        const percent = (audioEl.currentTime / audioEl.duration) * 100;
-        progress.style.width = percent + "%";
-      }
+    playBtn.addEventListener('click', () => {
+        isPlaying = !isPlaying;
+        
+        if (isPlaying) {
+            playIcon.style.display = 'none';
+            pauseIcon.style.display = 'block';
+            albumArt.classList.remove('paused');
+            
+            progressInterval = setInterval(() => {
+                currentSeconds++;
+                if (currentSeconds > totalSeconds) currentSeconds = 0;
+                
+                const percentage = (currentSeconds / totalSeconds) * 100;
+                progressBar.style.width = `${percentage}%`;
+                timeDisplay.textContent = formatTime(currentSeconds);
+            }, 1000);
+        } else {
+            playIcon.style.display = 'block';
+            pauseIcon.style.display = 'none';
+            albumArt.classList.add('paused');
+            clearInterval(progressInterval);
+        }
     });
   </script>
 </body>
