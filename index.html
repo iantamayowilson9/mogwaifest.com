@@ -64,10 +64,15 @@
       backdrop-filter: blur(5px);
     }
 
-    .logo-container {
+    .logo-container a {
       display: flex;
       align-items: center;
-      gap: 12px;
+    }
+
+    .nav-logo-img {
+      height: 40px;      /* Controla la altura para que encaje bien en la barra */
+      width: auto;       /* Mantiene la proporción de la imagen */
+      object-fit: contain;
     }
 
     .logo-icon {
@@ -639,8 +644,11 @@
 
   <!-- NAVEGACIÓN -->
   <nav>
-    <div class="logo-container">
-      <h1 class="logo-text">MOGWAIFEST</h1>
+   <div class="logo-container">
+      <!-- Reemplazamos el texto por tu imagen -->
+      <a href="#">
+        <img src="logo_nav.png" alt="Mogwaifest" class="nav-logo-img">
+      </a>
     </div>
     <div class="nav-links">
       <a href="#archivo">ARCHIVO</a>
@@ -663,7 +671,6 @@
       <img src="logo_mogwai.png" alt="Mogwai Productions" class="hero-logo-img" onerror="this.onerror=null; this.src='https://placehold.co/400x150/2a0845/ffffff?text=MOGWAI+PRODUCTIONS'">
     </div>
     <p class="hero-subtitle">Seele Album Release Show "Laberinto de los Grandes Lagos"</p>
-    <div class="coop-badge">Cooperación Voluntaria: $50</div>
 
     <!-- CONTADOR -->
     <div class="countdown-container">
