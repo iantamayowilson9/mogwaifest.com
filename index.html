@@ -191,6 +191,23 @@
       border-radius: 5px;
     }
 
+    /* Estilos para el contenedor y la imagen de título PNG */
+    .logo-title-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0.5rem 0;
+      width: 100%;
+    }
+
+    .hero-logo-img {
+      max-width: 550px; /* Tamaño máximo en PC (ajústalo a tu gusto) */
+      width: 85%;       /* Se adapta de forma fluida */
+      height: auto;     /* Mantiene la proporción original */
+      object-fit: contain;
+      filter: drop-shadow(0 0 15px rgba(92, 22, 153, 0.4)); /* Opcional: un sutil brillo morado acorde a la estética */
+    }
+
     /* 4. CONTADOR REGRESIVO */
     .countdown-container {
       display: flex;
@@ -634,10 +651,10 @@
       Tu navegador no soporta videos HTML5.
     </video>
     <div class="date-badge">9 OCTUBRE 2026 • CHIKILLA BAR, ENSENADA</div>
-    <h1 class="main-title">
-      <div class="white-text" style="font-family: 'FraksCustom', sans-serif;">MOGWAI</div>
-      <div class="gradient-text" style="font-family: 'FraksCustom', sans-serif;">PRODUCTIONS</div>
-    </h1>
+    <!-- LOGOTIPO EN PNG -->
+    <div class="logo-title-container">
+      <img src="logo_mogwai.png" alt="Mogwai Productions" class="hero-logo-img" onerror="this.onerror=null; this.src='https://placehold.co/400x150/2a0845/ffffff?text=MOGWAI+PRODUCTIONS'">
+    </div>
     <p class="hero-subtitle">Seele Album Release Show "Laberinto de los Grandes Lagos"</p>
     <div class="coop-badge">Cooperación Voluntaria: $50</div>
 
