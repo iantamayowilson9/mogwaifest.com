@@ -28,6 +28,13 @@
       src: url('FRAKS___.ttf') format('truetype');
     }
 
+    @font-face {
+       font-family: 'HelveticaNowExtraBold';
+        src: url('HelveticaNowDisplay-ExtraBold.ttf') format('truetype');
+        font-weight: bold;
+        font-style: normal;
+      }
+
     :root {
       --pure-black: #000000;
       --dark-purple: #1a052e;
@@ -184,14 +191,16 @@
       -webkit-text-fill-color: transparent;
     }
 
-    .hero-subtitle {
-      margin-top: 1.5rem;
-      font-size: 1.2rem;
-      color: var(--gray);
-      max-width: 600px;
-      line-height: 1.6;
-      font-family: "Helvetica Neue", Helvetica, sans-serif;
-    }
+    /* Aplicada al subtítulo del Hero */
+.hero-subtitle {
+  margin-top: 1.5rem;
+  font-size: 1.2rem;
+  color: var(--gray);
+  max-width: 600px;
+  line-height: 1.6;
+  font-family: 'HelveticaNowExtraBold', sans-serif;
+  letter-spacing: 1px;
+}
 
     .coop-badge {
       margin-top: 1.5rem;
@@ -514,7 +523,7 @@
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
-      font-family: 'PotiFont', sans-serif;
+      font-family: 'HelveticaNowExtraBold', sans-serif;
       letter-spacing: 1px;
     }
 
