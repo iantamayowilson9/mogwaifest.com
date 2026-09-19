@@ -656,33 +656,12 @@
     }
 }
 
-    /* --- EFECTO CRT (SCANLINES) --- */
-    .crt-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      pointer-events: none; /* Vital: permite hacer clic en los botones y enlaces a través del filtro */
-      z-index: 9999;        /* Asegura que esté por encima de videos, textos y fotos */
-      background: linear-gradient(
-          rgba(18, 16, 16, 0) 50%, 
-          rgba(0, 0, 0, 0.3) 50%
-        ), 
-        linear-gradient(
-          90deg, 
-          rgba(255, 0, 0, 0.03), 
-          rgba(0, 255, 0, 0.01), 
-          rgba(0, 0, 255, 0.03)
-        );
-      background-size: 100% 4px, 6px 100%; /* Define el grosor de las líneas de la pantalla */
-    }
+   
     
   </style>
 </head>
 <body>
 
-  <div class="crt-overlay"></div>
 
   <!-- NAVEGACIÓN -->
   <nav>
