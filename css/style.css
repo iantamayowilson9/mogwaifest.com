@@ -600,3 +600,41 @@ nav {
   .player-center      { width: 100%; }
   .player-right       { display: none; }
 }
+
+/* ---------- FILTRO CRT ---------- */
+.crt {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;          /* por encima de todo, incluido el reproductor */
+  pointer-events: none;   /* no estorba los clics */
+  background:
+    /* líneas de escaneo */
+    repeating-linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0) 0,
+      rgba(0, 0, 0, 0) 2px,
+      rgba(0, 0, 0, 0.15) 3px,
+      rgba(0, 0, 0, 0.15) 4px
+    ),
+    /* bordes oscuros tipo pantalla curva */
+    radial-gradient(ellipse at center, rgba(0, 0, 0, 0) 65%, rgba(0, 0, 0, 0.45) 100%);
+}
+
+/* parpadeo leve */
+.crt::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(157, 78, 221, 0.04);
+  animation: crt-flicker 0.15s infinite;
+}
+
+@keyframes crt-flicker {
+  0%   { opacity: 0.6; }
+  50%  { opacity: 1; }
+  100% { opacity: 0.7; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .crt::after { animation: none; }
+}
